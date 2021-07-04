@@ -29,7 +29,7 @@ APS_PlayerCharacter::APS_PlayerCharacter()
 void APS_PlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
