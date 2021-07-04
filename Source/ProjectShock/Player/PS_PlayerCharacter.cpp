@@ -16,6 +16,10 @@ APS_PlayerCharacter::APS_PlayerCharacter()
 	Weapon = CreateDefaultSubobject<UChildActorComponent>(TEXT("GunSlot"));
 	Weapon->SetChildActorClass(APS_Weapon::StaticClass());
 	Weapon->SetupAttachment(GetMesh());
+
+	Cytosine = CreateDefaultSubobject<UChildActorComponent>(TEXT("Cytosine"));
+	Cytosine->SetChildActorClass(APS_Weapon::StaticClass());
+	Cytosine->SetupAttachment(GetMesh());
 }
 
 // Called when the game starts or when spawned

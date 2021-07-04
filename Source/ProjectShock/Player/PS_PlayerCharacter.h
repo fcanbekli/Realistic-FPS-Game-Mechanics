@@ -28,6 +28,10 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		UChildActorComponent* Weapon;
 
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		UChildActorComponent* Cytosine;
+
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
