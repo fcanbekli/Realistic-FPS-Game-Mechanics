@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include <ProjectShock/Weapon/PS_Weapon.h>
+#include "Components/ChildActorComponent.h"
 #include "Camera/CameraComponent.h"
 #include "PS_PlayerCharacter.generated.h"
 
@@ -22,6 +24,10 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		class UCameraComponent* FPS_Camera;
+
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		UChildActorComponent* Weapon;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

@@ -11,6 +11,11 @@ APS_PlayerCharacter::APS_PlayerCharacter()
 	FPS_Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("FPS_Camera"));
 	FPS_Camera->SetupAttachment(RootComponent);
 	FPS_Camera->bUsePawnControlRotation = true;
+
+
+	Weapon = CreateDefaultSubobject<UChildActorComponent>(TEXT("GunSlot"));
+	Weapon->SetChildActorClass(APS_Weapon::StaticClass());
+	Weapon->SetupAttachment(GetMesh());
 }
 
 // Called when the game starts or when spawned
