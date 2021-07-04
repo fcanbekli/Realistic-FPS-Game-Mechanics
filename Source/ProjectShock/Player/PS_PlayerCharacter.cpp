@@ -20,6 +20,9 @@ APS_PlayerCharacter::APS_PlayerCharacter()
 	Cytosine = CreateDefaultSubobject<UChildActorComponent>(TEXT("Cytosine"));
 	Cytosine->SetChildActorClass(APS_Weapon::StaticClass());
 	Cytosine->SetupAttachment(GetMesh());
+
+	Health = 100.0f;
+	SyntheticDNA = 100.0f;
 }
 
 // Called when the game starts or when spawned

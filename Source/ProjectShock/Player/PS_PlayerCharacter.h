@@ -41,6 +41,10 @@ public:
 
 	FORCEINLINE UCameraComponent* GetCameraComponent() const { return FPS_Camera; }
 
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		float Health;
 
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		float SyntheticDNA;
 
 };
