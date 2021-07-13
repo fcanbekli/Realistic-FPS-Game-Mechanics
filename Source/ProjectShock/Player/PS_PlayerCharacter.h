@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include <ProjectShock/Inventory/PS_InventoryComponent.h>
 #include <ProjectShock/Weapon/PS_Weapon.h>
 #include "Components/ChildActorComponent.h"
 #include "Camera/CameraComponent.h"
@@ -24,6 +25,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		class UCameraComponent* FPS_Camera;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		class UPS_InventoryComponent* InventoryComponent;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		UChildActorComponent* Weapon;
