@@ -14,5 +14,5 @@ class PROJECTSHOCK_API UPS_TestItem : public UPS_Item
 {
 	GENERATED_BODY()
 protected:
-	virtual void Use(class APS_PlayerCharacter* Character) override;
+	virtual void Use() override;
 };

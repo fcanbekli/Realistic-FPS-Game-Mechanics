@@ -30,8 +30,8 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item")
 		class UPS_InventoryComponent* OwningInventory;
 
-	virtual void Use(class APS_PlayerCharacter* Character) PURE_VIRTUAL(UPS_Item, );
+	virtual void Use() PURE_VIRTUAL(UPS_Item, );
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void OnUse(class APS_PlayerCharacter* Character);
+		void OnUse();
 };

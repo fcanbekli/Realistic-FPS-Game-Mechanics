@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include <ProjectShock/Inventory/PS_Item.h>
 #include "Components/ActorComponent.h"
 #include "PS_InventoryComponent.generated.h"
 
@@ -16,6 +17,8 @@ public:
 	// Sets default values for this component's properties
 	UPS_InventoryComponent();
 
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	TArray<UPS_Item*> items;
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -24,5 +27,6 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "UseItem"))
+		void UseItem();
 };

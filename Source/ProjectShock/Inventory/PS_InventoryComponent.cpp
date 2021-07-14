@@ -32,3 +32,10 @@ void UPS_InventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 	// ...
 }
 
+void UPS_InventoryComponent::UseItem()
+{
+	items[0]->Use();
+	// TODO: On Use Currently not working,
+	items[0]->OnUse();
+}
+
