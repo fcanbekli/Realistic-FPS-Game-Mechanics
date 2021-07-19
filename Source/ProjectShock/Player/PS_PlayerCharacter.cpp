@@ -12,6 +12,9 @@ APS_PlayerCharacter::APS_PlayerCharacter()
 	FPS_Camera->SetupAttachment(RootComponent);
 	FPS_Camera->bUsePawnControlRotation = true;
 
+	bUseControllerRotationPitch = false;
+	bUseControllerRotationRoll = false;
+	bUseControllerRotationYaw = false;
 
 	Weapon = CreateDefaultSubobject<UChildActorComponent>(TEXT("GunSlot"));
 	Weapon->SetChildActorClass(APS_Weapon::StaticClass());
