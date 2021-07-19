@@ -4,6 +4,7 @@
 
 void UPS_PlayerAnimation::UpdateAnimationProperties(float DeltaTime)
 {
+	
 	if (PlayerCharacter == nullptr) {
 		PlayerCharacter = Cast<APS_PlayerCharacter>(TryGetPawnOwner());
 	}
@@ -20,7 +21,7 @@ void UPS_PlayerAnimation::UpdateAnimationProperties(float DeltaTime)
 		else {
 			bIsAccelerating = false;
 		}
-	}
+	}	
 }
 
 void UPS_PlayerAnimation::NativeInitializeAnimation()

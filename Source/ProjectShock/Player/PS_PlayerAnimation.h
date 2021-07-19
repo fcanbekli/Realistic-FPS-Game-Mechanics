@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include <ProjectShock/Player/PS_PlayerCharacter.h>
 #include "GameFramework/CharacterMovementComponent.h"
+#include <ProjectShock/GameModes/PS_PlayerController.h>
 #include "Animation/AnimInstance.h"
 #include "PS_PlayerAnimation.generated.h"
 
@@ -32,6 +33,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivate = "true"))
 		bool bIsAccelerating;
+
+	UPROPERTY(EditAnywheret c, BlueprintReadWrite, Category = Movement, meta = (AllowPrivate = "true"))
+		float XAxisValue;
 
 
 };

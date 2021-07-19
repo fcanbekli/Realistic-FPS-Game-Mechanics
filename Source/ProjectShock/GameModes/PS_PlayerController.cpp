@@ -5,6 +5,7 @@
 #include "GameFramework/PlayerController.h"
 APS_PlayerController::APS_PlayerController()
 {
+	
 }
 
 void APS_PlayerController::MoveForward(float Value)
