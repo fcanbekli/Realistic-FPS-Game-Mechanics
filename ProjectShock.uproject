@@ -24,6 +24,14 @@
 				"Mac",
 				"Linux"
 			]
+		},
+		{
+			"Name": "ControlRig",
+			"Enabled": true
+		},
+		{
+			"Name": "ControlRigSpline",
+			"Enabled": true
 		}
 	]
 }
