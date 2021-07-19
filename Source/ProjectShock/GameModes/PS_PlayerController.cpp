@@ -17,6 +17,15 @@ void APS_PlayerController::MoveForward(float Value)
 
 		const FVector Direction{ FRotationMatrix{YawRotation}.GetUnitAxis(EAxis::X) };
 		PlayerCharacter->AddMovementInput(Direction, Value);
+		if (Value < 0) {
+			PlayerCharacter->GetCharacterMovement()->MaxWalkSpeed = 75;
+		}
+		if(Value >= 0){
+			PlayerCharacter->GetCharacterMovement()->MaxWalkSpeed = 175;
+		}
+		if (PlayerCharacter->bIsSprinting == true) {
+			PlayerCharacter->GetCharacterMovement()->MaxWalkSpeed = 450;
+		}
 	}
 }
 

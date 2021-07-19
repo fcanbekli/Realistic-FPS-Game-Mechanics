@@ -64,6 +64,9 @@ public:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		bool bIsAiming;
 
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		bool bIsSprinting;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Status)
 		TEnumAsByte<EWeapon> ActiveWeapon;
 };

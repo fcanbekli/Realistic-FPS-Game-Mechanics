@@ -34,7 +34,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivate = "true"))
 		bool bIsAccelerating;
 
-	UPROPERTY(EditAnywheret c, BlueprintReadWrite, Category = Movement, meta = (AllowPrivate = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivate = "true"))
 		float XAxisValue;
 
 

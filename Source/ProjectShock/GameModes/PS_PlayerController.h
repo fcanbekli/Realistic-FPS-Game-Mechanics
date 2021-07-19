@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include <ProjectShock/Player/PS_PlayerCharacter.h>
 #include "PS_PlayerController.generated.h"
 
