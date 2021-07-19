@@ -26,6 +26,7 @@ APS_PlayerCharacter::APS_PlayerCharacter()
 	Health = 100.0f;
 	SyntheticDNA = 100.0f;
 	bIsAiming = false;
+	ActiveWeapon = EWeapon::Unarmed; 
 }
 
 // Called when the game starts or when spawned

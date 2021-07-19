@@ -10,6 +10,16 @@
 #include "Camera/CameraComponent.h"
 #include "PS_PlayerCharacter.generated.h"
 
+
+
+UENUM(BlueprintType)
+enum EWeapon
+{
+	Unarmed     UMETA(DisplayName = "Unarmed"),
+	Glock      UMETA(DisplayName = "Glock"),
+};
+
+
 UCLASS()
 class PROJECTSHOCK_API APS_PlayerCharacter : public ACharacter
 {
@@ -53,4 +63,7 @@ public:
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		bool bIsAiming;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Status)
+		TEnumAsByte<EWeapon> ActiveWeapon;
 };
