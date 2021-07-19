@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include <ProjectShock/Inventory/PS_InventoryComponent.h>
+#include <ProjectShock/Player/PS_PlayerProperties.h>
 #include <ProjectShock/Weapon/PS_Weapon.h>
 #include "Components/ChildActorComponent.h"
 #include "Camera/CameraComponent.h"
@@ -66,6 +67,10 @@ public:
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		bool bIsSprinting;
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		UPS_PlayerProperties* PlayerPropertiesData;	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Status)
 		TEnumAsByte<EWeapon> ActiveWeapon;
