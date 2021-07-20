@@ -2,6 +2,13 @@
 
 #include <ProjectShock/Player/PS_PlayerAnimation.h>
 
+UPS_PlayerAnimation::UPS_PlayerAnimation()
+{
+	RootYawOffset = 0.f;
+	CharacterYaw = 0.f;
+	CharacterYawLastFrame = 0.f;
+}
+
 void UPS_PlayerAnimation::UpdateAnimationProperties(float DeltaTime)
 {
 	
@@ -21,10 +28,34 @@ void UPS_PlayerAnimation::UpdateAnimationProperties(float DeltaTime)
 		else {
 			bIsAccelerating = false;
 		}
+		TurnInPlace();
 	}	
+
 }
 
 void UPS_PlayerAnimation::NativeInitializeAnimation()
 {
 	PlayerCharacter = Cast<APS_PlayerCharacter>(TryGetPawnOwner());
+}
+
+void UPS_PlayerAnimation::TurnInPlace()
+{
+	if (PlayerCharacter == nullptr) {
+		PlayerCharacter = Cast<APS_PlayerCharacter>(TryGetPawnOwner());
+	}
+	if (Speed > 0) {
+		//Character moving, do nothing
+	}
+	else {
+		CharacterYawLastFrame = CharacterYaw;
+		
+		CharacterYaw = PlayerCharacter->FPS_Camera->GetComponentRotation().Yaw;
+		const float YawDelta{ CharacterYaw - CharacterYawLastFrame };
+
+		RootYawOffset = UKismetMathLibrary::NormalizeAxis(RootYawOffset - YawDelta);
+// 		UE_LOG(LogTemp, Warning, TEXT("Character Yaw %f"), CharacterYaw);
+// 		UE_LOG(LogTemp, Warning, TEXT("RootYawOffset %f"), RootYawOffset);
+		GEngine->AddOnScreenDebugMessage(1, -1, FColor::Blue, FString::Printf(TEXT("Character Yaw %f"), CharacterYaw));
+		GEngine->AddOnScreenDebugMessage(2, -1, FColor::Red, FString::Printf(TEXT("RootYawOffset %f"), RootYawOffset));
+	}
 }
