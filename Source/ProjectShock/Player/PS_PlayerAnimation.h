@@ -34,13 +34,16 @@ public:
 		float Speed;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivate = "true"))
-		bool bIsInAir;
+		bool bIsInAir;	
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivate = "true"))
 		bool bIsAccelerating;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivate = "true"))
 		float XAxisValue;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivate = "true"))
+		float XRightAxisValue;
 
 		float CharacterYaw;
 
