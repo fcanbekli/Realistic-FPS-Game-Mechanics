@@ -26,6 +26,9 @@ void APS_PlayerController::MoveForward(float Value)
 		if (PlayerCharacter->bIsSprinting == true && PlayerCharacter->bIsAiming != true) {
 			PlayerCharacter->GetCharacterMovement()->MaxWalkSpeed = PlayerCharacter->PlayerPropertiesData->SprintSpeed;
 		}
+		if (PlayerCharacter->bIsSprinting != true && PlayerCharacter->bIsDeepAiming == true) {
+			PlayerCharacter->GetCharacterMovement()->MaxWalkSpeed = PlayerCharacter->PlayerPropertiesData->AimWalkSpeed;
+		}
 	}
 }
 

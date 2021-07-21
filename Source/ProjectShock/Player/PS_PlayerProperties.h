@@ -31,6 +31,9 @@ public:
 		float WalkSpeed;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		float AimWalkSpeed;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float BackWalkSpeed;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
