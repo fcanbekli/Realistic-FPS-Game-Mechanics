@@ -31,4 +31,7 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "FireWeapon"))
 		void FireWeapon();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "Reload"))
+		void Reload();
 };
