@@ -41,6 +41,10 @@
 		{
 			"Name": "HoudiniEngine",
 			"Enabled": true
+		},
+		{
+			"Name": "Metasound",
+			"Enabled": true
 		}
 	]
 }
