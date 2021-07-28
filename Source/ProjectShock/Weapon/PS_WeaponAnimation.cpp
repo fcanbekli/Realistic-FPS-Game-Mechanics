@@ -3,3 +3,17 @@
 
 #include <ProjectShock/Weapon/PS_WeaponAnimation.h>
 
+UPS_WeaponAnimation::UPS_WeaponAnimation()
+{
+	CurrentMagazineSize = 12;
+}
+
+void UPS_WeaponAnimation::UpdateAnimationProperties(float DeltaTime)
+{
+	//PlayerWeapon = Cast<APS_PlayerCharacter>(TryGetPawnOwner())->Weapon->GetChildActor();
+}
+
+void UPS_WeaponAnimation::NativeInitializeAnimation()
+{
+
+}

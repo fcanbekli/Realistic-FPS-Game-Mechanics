@@ -34,4 +34,13 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "Reload"))
 		void Reload();
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SkeletalMesh)
+		int FireRate;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SkeletalMesh)
+		int MaxMagazineSize;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SkeletalMesh)
+		int CurrentMagazineSize;
 };
