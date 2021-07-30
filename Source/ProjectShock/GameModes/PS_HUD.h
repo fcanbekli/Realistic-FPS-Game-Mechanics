@@ -13,5 +13,14 @@ UCLASS()
 class PROJECTSHOCK_API APS_HUD : public AHUD
 {
 	GENERATED_BODY()
-	
+public:
+
+	/*
+	============= BP_EVENT
+	FireCameraShake
+	Shake camera when gun fired
+	=============
+	*/
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "FireCameraShake"))
+		void FireCameraShake();
 };

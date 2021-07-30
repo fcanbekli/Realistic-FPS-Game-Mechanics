@@ -23,17 +23,7 @@ public:
 
 	virtual void NativeInitializeAnimation() override;
 
-
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivate = "true"))
 		class APS_Weapon* PlayerWeapon;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SkeletalMesh)
-		int FireRate;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SkeletalMesh)
-		int MaxMagazineSize;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SkeletalMesh)
-		int CurrentMagazineSize;
 };

@@ -5,7 +5,6 @@
 
 UPS_WeaponAnimation::UPS_WeaponAnimation()
 {
-	CurrentMagazineSize = 12;
 }
 
 void UPS_WeaponAnimation::UpdateAnimationProperties(float DeltaTime)

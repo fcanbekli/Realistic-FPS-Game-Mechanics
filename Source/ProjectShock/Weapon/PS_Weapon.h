@@ -22,25 +22,38 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = SkeletalMesh)
 		class USkeletalMeshComponent* WeaponMesh;
 
-
-
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-
+	/*
+	============= BP_EVENT
+	FireWeapon
+	Fire weapon
+	=============
+	*/
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "FireWeapon"))
 		void FireWeapon();
 
+	/*
+	============= BP_EVENT
+	Reload
+	Reload Weapon
+	=============
+	*/
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "Reload"))
 		void Reload();
 
+
+	// Speed of fire
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SkeletalMesh)
 		int FireRate;
 
+	// Maximum capacity of the gun, constant
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SkeletalMesh)
 		int MaxMagazineSize;
 
+	// Actual capacity of the gun
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SkeletalMesh)
 		int CurrentMagazineSize;
 };
