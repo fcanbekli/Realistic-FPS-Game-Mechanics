@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include <ProjectShock/Inventory/PS_Item.h>
+#include <ProjectShock/Inventory/PS_ItemData.h>
 #include "Components/ActorComponent.h"
 #include "PS_InventoryComponent.generated.h"
 
@@ -16,9 +16,12 @@ class PROJECTSHOCK_API UPS_InventoryComponent : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	UPS_InventoryComponent();
+	
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Ammo, meta = (AllowPrivateAccess = "true"))
+		int HandgunAmmo;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	TArray<UPS_Item*> items;
+	TArray<UPS_ItemData*> items;
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

@@ -45,6 +45,43 @@ void APS_PlayerController::MoveSide(float Value)
 
 }
 
+
+void APS_PlayerController::RightTrigger()
+{
+	Cast<APS_Weapon>(PlayerCharacter->Weapon->GetChildActor())->FireWeapon();
+
+	Cast<APS_HUD>(GetHUD())->FireCameraShake();
+	
+}
+
+
+void APS_PlayerController::LeftThumbstickButton()
+{
+	if (PlayerCharacter->bIsSprinting == true) {
+		PlayerCharacter->bIsSprinting = false;
+	}
+	else if(PlayerCharacter->bIsSprinting == false) {
+		PlayerCharacter->bIsSprinting = true;
+	}
+}
+
+
+void APS_PlayerController::RightThumbstickButton()
+{
+	if (PlayerCharacter->bIsCrouching == true) {
+		PlayerCharacter->bIsCrouching = false;
+	}
+	else if (PlayerCharacter->bIsCrouching == false) {
+		PlayerCharacter->bIsCrouching = true;
+	}
+}
+
+
+void APS_PlayerController::LeftFaceButton()
+{
+	Cast<APS_Weapon>(PlayerCharacter->Weapon->GetChildActor())->Reload();
+}
+
 void APS_PlayerController::TurnMovement(float Rate)
 {
 	PlayerCharacter->AddControllerYawInput(Rate * BaseTurnRate * GetWorld()->GetDeltaSeconds());

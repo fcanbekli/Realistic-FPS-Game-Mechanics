@@ -24,7 +24,7 @@ APS_PlayerCharacter::APS_PlayerCharacter()
 	Cytosine->SetChildActorClass(APS_Weapon::StaticClass());
 	Cytosine->SetupAttachment(GetMesh());
 
-	InventoryComponent = CreateDefaultSubobject<UPS_InventoryComponent>(TEXT("InventoryComponent"));
+
 
 	Health = 100.0f;
 	SyntheticDNA = 100.0f;

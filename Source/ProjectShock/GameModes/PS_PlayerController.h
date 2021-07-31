@@ -6,6 +6,7 @@
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include <ProjectShock/Player/PS_PlayerCharacter.h>
+#include <ProjectShock/GameModes/PS_HUD.h>
 #include "PS_PlayerController.generated.h"
 
 /**
@@ -28,6 +29,17 @@ class PROJECTSHOCK_API APS_PlayerController : public APlayerController
 		UFUNCTION(BlueprintCallable)
 		void MoveSide(float Value);
 
+		UFUNCTION(BlueprintCallable)
+		void RightTrigger();
+
+		UFUNCTION(BlueprintCallable)
+		void LeftThumbstickButton();
+
+		UFUNCTION(BlueprintCallable)
+		void RightThumbstickButton();
+
+		UFUNCTION(BlueprintCallable)
+		void LeftFaceButton();
 
 		UFUNCTION(BlueprintCallable, Category = "Weapon")
 			void TurnMovement(float Rate);
