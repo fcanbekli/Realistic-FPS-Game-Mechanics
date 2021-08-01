@@ -2,10 +2,12 @@
 
 
 #include <ProjectShock/GameModes/PS_PlayerController.h>
+#include "Kismet/GameplayStatics.h"
 #include "GameFramework/PlayerController.h"
 APS_PlayerController::APS_PlayerController()
 {
-	
+
+
 }
 
 void APS_PlayerController::MoveForward(float Value)
@@ -23,10 +25,10 @@ void APS_PlayerController::MoveForward(float Value)
 		if(Value >= 0){
 			PlayerCharacter->GetCharacterMovement()->MaxWalkSpeed = PlayerCharacter->PlayerPropertiesData->WalkSpeed;
 		}
-		if (PlayerCharacter->bIsSprinting == true && PlayerCharacter->bIsAiming != true) {
+		if (Cast<APS_PlayerState>(PlayerState)->bIsSprinting == true && Cast<APS_PlayerState>(PlayerState)->bIsAiming != true) {
 			PlayerCharacter->GetCharacterMovement()->MaxWalkSpeed = PlayerCharacter->PlayerPropertiesData->SprintSpeed;
 		}
-		if (PlayerCharacter->bIsSprinting != true && PlayerCharacter->bIsDeepAiming == true) {
+		if (Cast<APS_PlayerState>(PlayerState)->bIsSprinting != true && Cast<APS_PlayerState>(PlayerState)->bIsDeepAiming == true) {
 			PlayerCharacter->GetCharacterMovement()->MaxWalkSpeed = PlayerCharacter->PlayerPropertiesData->AimWalkSpeed;
 		}
 	}
@@ -57,22 +59,22 @@ void APS_PlayerController::RightTrigger()
 
 void APS_PlayerController::LeftThumbstickButton()
 {
-	if (PlayerCharacter->bIsSprinting == true) {
-		PlayerCharacter->bIsSprinting = false;
+	if (Cast<APS_PlayerState>(PlayerState)->bIsSprinting == true) {
+		Cast<APS_PlayerState>(PlayerState)->bIsSprinting = false;
 	}
-	else if(PlayerCharacter->bIsSprinting == false) {
-		PlayerCharacter->bIsSprinting = true;
+	else if(Cast<APS_PlayerState>(PlayerState)->bIsSprinting == false) {
+		Cast<APS_PlayerState>(PlayerState)->bIsSprinting = true;
 	}
 }
 
 
 void APS_PlayerController::RightThumbstickButton()
 {
-	if (PlayerCharacter->bIsCrouching == true) {
-		PlayerCharacter->bIsCrouching = false;
+	if (Cast<APS_PlayerState>(PlayerState)->bIsCrouching == true) {
+		Cast<APS_PlayerState>(PlayerState)->bIsCrouching = false;
 	}
-	else if (PlayerCharacter->bIsCrouching == false) {
-		PlayerCharacter->bIsCrouching = true;
+	else if (Cast<APS_PlayerState>(PlayerState)->bIsCrouching == false) {
+		Cast<APS_PlayerState>(PlayerState)->bIsCrouching = true;
 	}
 }
 
@@ -80,6 +82,23 @@ void APS_PlayerController::RightThumbstickButton()
 void APS_PlayerController::LeftFaceButton()
 {
 	Cast<APS_Weapon>(PlayerCharacter->Weapon->GetChildActor())->Reload();
+}
+
+
+void APS_PlayerController::LeftShoulderButton()
+{
+	if (PlayerStateObject->bIsGuarding == true) {
+		PlayerStateObject->bIsGuarding = false;
+	}
+	else if (PlayerStateObject->bIsGuarding == false) {
+		PlayerStateObject->bIsGuarding = true;
+	}
+}
+
+
+void APS_PlayerController::LeftTriggerButton()
+{
+
 }
 
 void APS_PlayerController::TurnMovement(float Rate)

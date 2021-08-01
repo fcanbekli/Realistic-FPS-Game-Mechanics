@@ -7,4 +7,6 @@
 APS_PlayerState::APS_PlayerState()
 {
 	InventoryComponent = CreateDefaultSubobject<UPS_InventoryComponent>(TEXT("InventoryComponent"));
+
+	bIsAiming = false;
 }

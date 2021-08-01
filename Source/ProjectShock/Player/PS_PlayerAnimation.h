@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include <ProjectShock/Player/PS_PlayerCharacter.h>
 #include "GameFramework/CharacterMovementComponent.h"
+#include <ProjectShock/GameModes/PS_PlayerState.h>
 #include "Kismet/KismetMathLibrary.h"
 #include <ProjectShock/GameModes/PS_PlayerController.h>
 #include "Animation/AnimInstance.h"
@@ -25,10 +26,15 @@ public:
 
 	virtual void NativeInitializeAnimation() override;
 
+	
+
 	void TurnInPlace();
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivate = "true"))
 		class APS_PlayerCharacter* PlayerCharacter;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivate = "true"))
+		class APS_PlayerState* PlayerStateObject;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivate = "true"))
 		float Speed;

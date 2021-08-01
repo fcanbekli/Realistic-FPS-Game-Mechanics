@@ -7,6 +7,8 @@ UPS_PlayerAnimation::UPS_PlayerAnimation()
 	RootYawOffset = 0.f;
 	CharacterYaw = 0.f;
 	CharacterYawLastFrame = 0.f;
+
+
 }
 
 void UPS_PlayerAnimation::UpdateAnimationProperties(float DeltaTime)
@@ -14,6 +16,7 @@ void UPS_PlayerAnimation::UpdateAnimationProperties(float DeltaTime)
 	
 	if (PlayerCharacter == nullptr) {
 		PlayerCharacter = Cast<APS_PlayerCharacter>(TryGetPawnOwner());
+		//PlayerStateObject = Cast<APS_PlayerState>(TryGetPawnOwner()->GetPlayerState());
 	}
 	if (PlayerCharacter) {
 		FVector Velocity{ PlayerCharacter->GetVelocity() };
@@ -36,6 +39,7 @@ void UPS_PlayerAnimation::UpdateAnimationProperties(float DeltaTime)
 void UPS_PlayerAnimation::NativeInitializeAnimation()
 {
 	PlayerCharacter = Cast<APS_PlayerCharacter>(TryGetPawnOwner());
+
 }
 
 void UPS_PlayerAnimation::TurnInPlace()

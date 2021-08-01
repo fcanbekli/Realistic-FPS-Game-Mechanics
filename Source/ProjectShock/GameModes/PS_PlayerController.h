@@ -6,6 +6,8 @@
 #include "GameFramework/PlayerController.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include <ProjectShock/Player/PS_PlayerCharacter.h>
+#include <ProjectShock/Player/PS_PlayerCameraManager.h>
+#include <ProjectShock/GameModes/PS_PlayerState.h>
 #include <ProjectShock/GameModes/PS_HUD.h>
 #include "PS_PlayerController.generated.h"
 
@@ -21,6 +23,12 @@ class PROJECTSHOCK_API APS_PlayerController : public APlayerController
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		APS_PlayerCharacter* PlayerCharacter;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		APS_PlayerState* PlayerStateObject;
+
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		APS_PlayerCameraManager* PlayerCameraManagerObject;
 
 		/*
 		============= Function
@@ -77,6 +85,25 @@ class PROJECTSHOCK_API APS_PlayerController : public APlayerController
 		UFUNCTION(BlueprintCallable)
 		void LeftFaceButton();
 
+
+		/*
+		============= Function
+		LeftShoulderButton
+
+		=============
+		*/
+		UFUNCTION(BlueprintCallable)
+		void LeftShoulderButton();
+
+
+		/*
+		============= Function
+		LeftShoulderButton
+
+		=============
+		*/
+		UFUNCTION(BlueprintCallable)
+		void LeftTriggerButton();
 
 		/*
 		============= Function
