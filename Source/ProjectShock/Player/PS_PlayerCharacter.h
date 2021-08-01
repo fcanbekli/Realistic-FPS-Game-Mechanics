@@ -43,9 +43,6 @@ public:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		UChildActorComponent* Weapon;
 
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
-		UChildActorComponent* Cytosine;
-
 
 	UFUNCTION(BlueprintCallable)
 		void Interact(APS_InteractableActor* LootActor);
