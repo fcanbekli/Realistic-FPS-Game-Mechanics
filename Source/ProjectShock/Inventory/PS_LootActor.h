@@ -21,16 +21,23 @@ public:
 	APS_LootActor();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item, meta = (AllowPrivateAccess = "true"))
-	UPS_ItemData* ItemData;
+		UPS_ItemData* ItemData;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item, meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* LootMesh;
+		UStaticMeshComponent* LootMesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item, meta = (AllowPrivateAccess = "true"))
-	UWidgetComponent* LootIconWidget;
+		UWidgetComponent* LootIconWidget;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item, meta = (AllowPrivateAccess = "true"))
 		float DistanceBetweenPlayer;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item, meta = (AllowPrivateAccess = "true"))
+		bool bIsIconVisible;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item, meta = (AllowPrivateAccess = "true"))
+		bool bIsInteractionVisible;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

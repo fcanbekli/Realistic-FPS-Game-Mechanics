@@ -22,28 +22,77 @@ class PROJECTSHOCK_API APS_PlayerController : public APlayerController
 		APS_PlayerCharacter* PlayerCharacter;
 
 
-
+		/*
+		============= Function
+		MoveForward
+		
+		=============
+		*/
 		UFUNCTION(BlueprintCallable)
 		void MoveForward(float Value);
 
+		/*
+		============= Function
+		MoveSide
+
+		=============
+		*/
 		UFUNCTION(BlueprintCallable)
 		void MoveSide(float Value);
 
+		/*
+		============= Function
+		RightTrigger
+
+		=============
+		*/
 		UFUNCTION(BlueprintCallable)
 		void RightTrigger();
 
+
+		/*
+		============= Function
+		LeftThumbstickButton
+
+		=============
+		*/
 		UFUNCTION(BlueprintCallable)
 		void LeftThumbstickButton();
 
+		/*
+		============= Function
+		RightThumbstickButton
+
+		=============
+		*/
 		UFUNCTION(BlueprintCallable)
 		void RightThumbstickButton();
 
+		/*
+		============= Function
+		SetIconInvisible
+		Reload weapon
+		=============
+		*/
 		UFUNCTION(BlueprintCallable)
 		void LeftFaceButton();
 
+
+		/*
+		============= Function
+		TurnMovement
+		Camera left right rotation
+		=============
+		*/
 		UFUNCTION(BlueprintCallable, Category = "Weapon")
 			void TurnMovement(float Rate);
 
+		/*
+		============= Function
+		LoopUpMovement
+		Camera up down rotation 
+		=============
+		*/
 		UFUNCTION(BlueprintCallable, Category = "Weapon")
 			void LoopUpMovement(float Rate);
 
