@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include <ProjectShock/Inventory/PS_InventoryComponent.h>
+#include <ProjectShock/Inventory/PS_InteractableActor.h>
 #include <ProjectShock/Player/PS_PlayerProperties.h>
 #include <ProjectShock/Weapon/PS_Weapon.h>
 #include "Components/ChildActorComponent.h"
@@ -44,6 +45,10 @@ public:
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		UChildActorComponent* Cytosine;
+
+
+	UFUNCTION(BlueprintCallable)
+		void Interact(APS_InteractableActor* LootActor);
 
 
 public:	

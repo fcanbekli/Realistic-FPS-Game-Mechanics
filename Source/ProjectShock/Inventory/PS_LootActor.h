@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include <ProjectShock/Inventory/PS_ItemData.h>
+#include <ProjectShock/Inventory/PS_InteractableActor.h>
 #include "Components/WidgetComponent.h"
 #include "Components/MaterialBillboardComponent.h"
 #include "Components/StaticMeshComponent.h"
@@ -12,7 +13,7 @@
 #include "PS_LootActor.generated.h"
 
 UCLASS()
-class PROJECTSHOCK_API APS_LootActor : public AActor
+class PROJECTSHOCK_API APS_LootActor : public APS_InteractableActor
 {
 	GENERATED_BODY()
 	
@@ -37,6 +38,11 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Item, meta = (AllowPrivateAccess = "true"))
 		bool bIsInteractionVisible;
+	
+	virtual void Use() PURE_VIRTUAL(UPS_Item, );
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void OnUse();
 
 protected:
 	// Called when the game starts or when spawned

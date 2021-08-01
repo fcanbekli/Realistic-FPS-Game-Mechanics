@@ -39,6 +39,15 @@ void APS_PlayerCharacter::BeginPlay()
 
 }
 
+
+void APS_PlayerCharacter::Interact(APS_InteractableActor* InteractableActor)
+{
+	if (InteractableActor) {
+		InteractableActor->Interact();
+		InteractableActor->Interact_BP();
+	}
+}
+
 // Called every frame
 void APS_PlayerCharacter::Tick(float DeltaTime)
 {
