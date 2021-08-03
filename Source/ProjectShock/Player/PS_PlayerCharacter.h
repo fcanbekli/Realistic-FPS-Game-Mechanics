@@ -63,6 +63,15 @@ public:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		float SyntheticDNA;
 
+
+	/*
+	============= BP_EVENT
+	ChangeWeapon
+
+	=============
+	*/
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "ChangeWeapon"))
+		void ChangeWeapon();
 	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
