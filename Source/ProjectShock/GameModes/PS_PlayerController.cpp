@@ -10,6 +10,19 @@ APS_PlayerController::APS_PlayerController()
 
 }
 
+
+
+
+
+
+
+
+
+void APS_PlayerController::SetIsAimingFalse()
+{
+	PlayerStateObject->bIsAiming = false;
+}
+
 void APS_PlayerController::MoveForward(float Value)
 {
 	if ((PlayerCharacter != nullptr) && (Value != 0.0f))
@@ -50,10 +63,17 @@ void APS_PlayerController::MoveSide(float Value)
 
 void APS_PlayerController::RightTrigger()
 {
-	Cast<APS_Weapon>(PlayerCharacter->Weapon->GetChildActor())->FireWeapon();
+	if (WasInputKeyJustPressed(EKeys::Gamepad_RightTrigger)) {
+		PlayerStateObject->bIsAiming = true;
 
-	Cast<APS_HUD>(GetHUD())->FireCameraShake();
-	
+		Cast<APS_Weapon>(PlayerCharacter->Weapon->GetChildActor())->FireWeapon();
+		Cast<APS_HUD>(GetHUD())->FireCameraShake();
+
+		GetWorldTimerManager().SetTimer(SideTransitionTimer, this, &APS_PlayerController::SetIsAimingFalse, 0.0f, false, 3.0f);
+	}else {
+
+	}
+
 }
 
 
@@ -81,7 +101,14 @@ void APS_PlayerController::RightThumbstickButton()
 
 void APS_PlayerController::LeftFaceButton()
 {
-	Cast<APS_Weapon>(PlayerCharacter->Weapon->GetChildActor())->Reload();
+	if (Cast<APS_PlayerState>(PlayerState)->bIsReloding == true) {
+		UE_LOG(LogTemp, Warning, TEXT("Already Reloading"));
+	}
+	else {
+		Cast<APS_PlayerState>(PlayerState)->bIsAiming = true;
+		Cast<APS_Weapon>(PlayerCharacter->Weapon->GetChildActor())->Reload();
+	}
+	//GetWorldTimerManager().SetTimer(SideTransitionTimer, this, &APS_PlayerController::SetIsAimingFalse, 0.0f, false, 3.0f);
 }
 
 
@@ -98,6 +125,15 @@ void APS_PlayerController::LeftShoulderButton()
 
 void APS_PlayerController::LeftTriggerButton()
 {
+	if (WasInputKeyJustPressed(EKeys::Gamepad_LeftTrigger)) {
+		PlayerStateObject->bIsAiming = true;
+		PlayerCameraManagerObject->AimZoomIn();
+	}
+	else {
+		PlayerCameraManagerObject->AimZoomOut();
+		GetWorldTimerManager().SetTimer(SideTransitionTimer, this, &APS_PlayerController::SetIsAimingFalse, 0.0f, false, 3.0f);
+	}
+	
 
 }
 

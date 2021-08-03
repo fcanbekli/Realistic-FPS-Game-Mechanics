@@ -30,6 +30,16 @@ class PROJECTSHOCK_API APS_PlayerController : public APlayerController
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		APS_PlayerCameraManager* PlayerCameraManagerObject;
 
+	FTimerHandle SideTransitionTimer;
+
+		/*
+		============= Timer Function
+		SetIsAimingFalse
+
+		=============
+		*/
+		void SetIsAimingFalse();
+
 		/*
 		============= Function
 		MoveForward
