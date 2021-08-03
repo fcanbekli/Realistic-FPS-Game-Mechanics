@@ -67,7 +67,6 @@ void APS_PlayerController::RightTrigger()
 		PlayerStateObject->bIsAiming = true;
 
 		Cast<APS_Weapon>(PlayerCharacter->Weapon->GetChildActor())->FireWeapon();
-		Cast<APS_HUD>(GetHUD())->FireCameraShake();
 
 		GetWorldTimerManager().SetTimer(SideTransitionTimer, this, &APS_PlayerController::SetIsAimingFalse, 0.0f, false, 3.0f);
 	}else {
