@@ -3,11 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include <ProjectShock/Enemies/PS_BaseEnemy.h>
+
 #include "GameFramework/Actor.h"
 #include "PS_Ripper.generated.h"
 
 UCLASS()
-class PROJECTSHOCK_API APS_Ripper : public AActor
+class PROJECTSHOCK_API APS_Ripper : public APS_BaseEnemy
 {
 	GENERATED_BODY()
 	
