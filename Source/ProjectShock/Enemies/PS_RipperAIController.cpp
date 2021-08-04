@@ -3,6 +3,15 @@
 #include <ProjectShock/Enemies/PS_RipperAIController.h>
 
 
+APS_RipperAIController::APS_RipperAIController()
+{
+	AIPerception = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("AIPerception Component"));
+	Sight = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("Sight Sense"));
+	
+	// SightSense
+	ConfigureSightSence(Sight);
+}
+
 void APS_RipperAIController::BeginPlay()
 {
 	RunBehaviorTree(BehavioralTree);
@@ -16,5 +25,23 @@ void APS_RipperAIController::BeginPlay()
 void APS_RipperAIController::OnPossess(APawn* InPawn)  
 {
 	Super::OnPossess(InPawn);
+	
 	RipperCharacter = Cast<APS_Ripper>(InPawn);
 }
+
+void APS_RipperAIController::ConfigureSightSence(UAISenseConfig_Sight* SightConfig)
+{
+	if (SightConfig)
+	{
+		// Sight configuration
+		SightConfig->SightRadius = 500;
+		SightConfig->LoseSightRadius = 600;
+		SightConfig->PeripheralVisionAngleDegrees = 60.f;
+		SightConfig->DetectionByAffiliation.bDetectEnemies = true;
+		SightConfig->DetectionByAffiliation.bDetectNeutrals = true;
+		SightConfig->DetectionByAffiliation.bDetectFriendlies = true;
+
+		AIPerception->ConfigureSense(*SightConfig);
+	}
+}
+
