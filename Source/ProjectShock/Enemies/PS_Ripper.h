@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include <ProjectShock/Enemies/PS_BaseEnemy.h>
-
+#include <ProjectShock/Enemies/PS_ERipperState.h>
 #include "GameFramework/Actor.h"
 #include "PS_Ripper.generated.h"
 
@@ -16,7 +16,8 @@ class PROJECTSHOCK_API APS_Ripper : public APS_BaseEnemy
 public:	
 	// Sets default values for this actor's properties
 	APS_Ripper();
-
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		ERipperState RipperState;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

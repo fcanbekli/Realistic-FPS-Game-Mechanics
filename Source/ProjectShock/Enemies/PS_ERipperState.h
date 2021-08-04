@@ -19,7 +19,8 @@ class PROJECTSHOCK_API UPS_ERipperState : public UObject
 
 UENUM(BlueprintType)
 enum class ERipperState : uint8 {
-	PASSIVE = 0 UMETA(DisplayName = "PASSIVE"),
-	HARASSER = 1  UMETA(DisplayName = "HARASSER"),
-	AGGRESSIVE = 2     UMETA(DisplayName = "AGGRESSIVE"),
+	PASSIVE = 0			UMETA(DisplayName = "PASSIVE"),
+	PATROL = 1			UMETA(DisplayName = "PATROL"),
+	HARASSER = 2		UMETA(DisplayName = "HARASSER"),
+	AGGRESSIVE = 3		UMETA(DisplayName = "AGGRESSIVE"),
 };
