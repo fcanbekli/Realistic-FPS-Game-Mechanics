@@ -21,6 +21,7 @@ UENUM(BlueprintType)
 enum class ERipperState : uint8 {
 	PASSIVE = 0			UMETA(DisplayName = "PASSIVE"),
 	PATROL = 1			UMETA(DisplayName = "PATROL"),
-	HARASSER = 2		UMETA(DisplayName = "HARASSER"),
-	AGGRESSIVE = 3		UMETA(DisplayName = "AGGRESSIVE"),
+	INVESTIGATE = 2		UMETA(DisplayName = "INVESTIGATE"),
+	HARASS = 3		UMETA(DisplayName = "HARASS"),
+	AGGRESSIVE = 4		UMETA(DisplayName = "AGGRESSIVE"),
 };

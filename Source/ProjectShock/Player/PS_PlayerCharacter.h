@@ -8,6 +8,7 @@
 #include <ProjectShock/Inventory/PS_InteractableActor.h>
 #include <ProjectShock/Player/PS_PlayerProperties.h>
 #include <ProjectShock/Weapon/PS_Weapon.h>
+#include <ProjectShock/ActorComponent/PS_HealthComponent.h>
 #include "Components/ChildActorComponent.h"
 #include "Camera/CameraComponent.h"
 #include "PS_PlayerCharacter.generated.h"
@@ -79,4 +80,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Status)
 		TEnumAsByte<EWeapon> ActiveWeapon;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
+		UPS_HealthComponent* HealthComponent;
+
 };

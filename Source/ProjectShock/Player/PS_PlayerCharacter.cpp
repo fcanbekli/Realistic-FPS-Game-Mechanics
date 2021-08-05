@@ -21,7 +21,7 @@ APS_PlayerCharacter::APS_PlayerCharacter()
 	Weapon->SetupAttachment(GetMesh());
 
 
-
+	HealthComponent = CreateDefaultSubobject<UPS_HealthComponent>(TEXT("HealthComponent"));
 
 
 	Health = 100.0f;
