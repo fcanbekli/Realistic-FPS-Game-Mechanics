@@ -25,7 +25,7 @@ class PROJECTSHOCK_API APS_RipperAIController : public AAIController
 public:
 		APS_RipperAIController();
 		// Called when the game starts or when spawned
-		virtual void BeginPlay() override;
+/*		virtual void BeginPlay() override;*/
 		virtual void OnPossess(APawn* InPawn) override;
 		
 		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = AI, meta = (AllowPrivateAccess = "true"))

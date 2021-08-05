@@ -11,21 +11,21 @@ APS_RipperAIController::APS_RipperAIController()
 	// SightSense
 	ConfigureSightSence(Sight);
 }
-
-void APS_RipperAIController::BeginPlay()
-{
-	RunBehaviorTree(BehavioralTree);
-
-//	UseBlackboard(BlackboardDataAsset, Blackboard);
-// 	BlackboardComp = CreateDefaultSubobject<UBlackboardComponent>(this, TEXT("BlackBoardComp"));
-//  BehaviorComp =	 CreateDefaultSubobject<UBehaviorTreeComponent>(this, TEXT("BehaviorComp"));
-
-}
+// 
+// void APS_RipperAIController::BeginPlay()
+// {
+// 
+// 
+// //	UseBlackboard(BlackboardDataAsset, Blackboard);
+// // 	BlackboardComp = CreateDefaultSubobject<UBlackboardComponent>(this, TEXT("BlackBoardComp"));
+// //  BehaviorComp =	 CreateDefaultSubobject<UBehaviorTreeComponent>(this, TEXT("BehaviorComp"));
+// 
+// }
 
 void APS_RipperAIController::OnPossess(APawn* InPawn)  
 {
 	Super::OnPossess(InPawn);
-	
+	RunBehaviorTree(BehavioralTree);
 	RipperCharacter = Cast<APS_Ripper>(InPawn);
 }
 
