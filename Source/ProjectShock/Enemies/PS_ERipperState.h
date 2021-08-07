@@ -22,6 +22,7 @@ enum class ERipperState : uint8 {
 	PASSIVE = 0			UMETA(DisplayName = "PASSIVE"),
 	PATROL = 1			UMETA(DisplayName = "PATROL"),
 	INVESTIGATE = 2		UMETA(DisplayName = "INVESTIGATE"),
-	HARASS = 3		UMETA(DisplayName = "HARASS"),
+	HARASS = 3			UMETA(DisplayName = "HARASS"),
 	AGGRESSIVE = 4		UMETA(DisplayName = "AGGRESSIVE"),
+	DEAD = 5			UMETA(DisplayName = "DEAD"),
 };
