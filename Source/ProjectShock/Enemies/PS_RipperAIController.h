@@ -50,4 +50,10 @@ public:
 
 		void ConfigureSightSence(UAISenseConfig_Sight* SightConfig);
 
+		UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = AI)
+			void ChangeAIState(ERipperState NewState);
+
+
+
+
 };

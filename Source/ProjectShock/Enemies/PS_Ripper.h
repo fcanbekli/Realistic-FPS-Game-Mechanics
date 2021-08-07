@@ -16,7 +16,7 @@ class PROJECTSHOCK_API APS_Ripper : public APS_BaseEnemy
 public:	
 	// Sets default values for this actor's properties
 	APS_Ripper();
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		ERipperState RipperState;
 protected:
 	// Called when the game starts or when spawned
@@ -25,5 +25,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+
 
 };

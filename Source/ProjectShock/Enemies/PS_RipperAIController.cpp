@@ -43,5 +43,14 @@ void APS_RipperAIController::ConfigureSightSence(UAISenseConfig_Sight* SightConf
 
 		AIPerception->ConfigureSense(*SightConfig);
 	}
+
+
+
+
 }
 
+void APS_RipperAIController::ChangeAIState_Implementation(ERipperState NewState)
+{
+	RipperCharacter->RipperState = NewState;
+	GetBlackboardComponent()->SetValueAsEnum("RipperState", (uint8)RipperCharacter->RipperState);
+}

@@ -25,3 +25,6 @@ void APS_Ripper::Tick(float DeltaTime)
 
 }
 
+
+
+
