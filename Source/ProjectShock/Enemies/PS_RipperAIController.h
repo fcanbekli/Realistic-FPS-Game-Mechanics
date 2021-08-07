@@ -53,7 +53,7 @@ public:
 		UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = AI)
 			void ChangeAIState(ERipperState NewState);
 
-
-
+		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = AI, meta = (AllowPrivateAccess = "true"))
+			float DistanceBetweenPlayer;
 
 };
