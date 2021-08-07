@@ -23,4 +23,7 @@ public:
 	*/
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "FireCameraShake"))
 		void FireCameraShake();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "UpdateAmmoBar"))
+		void UpdateAmmoBar();
 };

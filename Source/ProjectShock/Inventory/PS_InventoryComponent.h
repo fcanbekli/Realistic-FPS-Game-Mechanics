@@ -17,7 +17,7 @@ public:
 	// Sets default values for this component's properties
 	UPS_InventoryComponent();
 	
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Ammo, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Ammo, meta = (AllowPrivateAccess = "true"))
 		int HandgunAmmo;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
