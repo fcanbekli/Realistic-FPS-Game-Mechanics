@@ -9,6 +9,8 @@ APS_Weapon::APS_Weapon()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	WeaponMesh = CreateDefaultSubobject<USkeletalMeshComponent >(TEXT("WeaponMesh"));
+	MuzzleFireVFX = CreateDefaultSubobject<UNiagaraComponent>(TEXT("MuzzleFireVFX"));
+	BulletEjectionVFX = CreateDefaultSubobject<UNiagaraComponent>(TEXT("BulletEjectionVFX"));
 }
 
 // Called when the game starts or when spawned

@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "NiagaraComponent.h"
+#include "NiagaraFunctionLibrary.h"
 #include "GameFramework/Actor.h"
 #include "PS_Weapon.generated.h"
 
@@ -56,4 +58,11 @@ public:
 	// Actual capacity of the gun
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SkeletalMesh)
 		int CurrentMagazineSize;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Effects")
+		UNiagaraComponent* MuzzleFireVFX;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Effects")
+		UNiagaraComponent* BulletEjectionVFX;
+
 };
