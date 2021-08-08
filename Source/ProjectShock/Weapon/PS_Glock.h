@@ -41,6 +41,4 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void FireGlock();
 
-	UFUNCTION(BlueprintCallable)
-		void ReloadGlock();
 };
