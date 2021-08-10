@@ -118,7 +118,7 @@ void APS_PlayerController::LeftFaceButton()
 }
 
 
-void APS_PlayerController::LeftShoulderButton()
+void APS_PlayerController::Le ftShoulderButton()
 {
 	if (PlayerStateObject->bIsGuarding == true) {
 		PlayerStateObject->bIsGuarding = false;
