@@ -6,19 +6,16 @@
 #include <ProjectShock/Player/PS_HUD_Crosshair.h>
 #include "GameFramework/HUD.h"
 #include "PS_HUD.generated.h"
-
-/**
- * 
- * 
- * 
- */
-
-
 UENUM(BlueprintType)
-enum class ECrosshairState : uint8 {
-	AIM_IN = 0 UMETA(DisplayName = "AIM_IN"),
-	AIM_OUT = 1  UMETA(DisplayName = "AIM_OUT"),
+enum class ECrosshairAction : uint8 {
+	SHOW_DEFAULT_CROSSHAIR = 0			UMETA(DisplayName = "SHOW_DEFAULT_CROSSHAIR"),
+	DISAPPEAR_DEFAULT_CROSSHAIR = 1			UMETA(DisplayName = "DISAPPEAR_DEFAULT_CROSSHAIR"),
+	SHOOT_DEFAULT = 2		UMETA(DisplayName = "SHOOT_DEFAULT"),
+	SHOOT_ENEMY = 3			UMETA(DisplayName = "SHOOT_ENEMY"),
+	SHOOT_ARMOR = 4		UMETA(DisplayName = "SHOOT_ARMOR"),
+	SHOOT_HEAD = 5			UMETA(DisplayName = "SHOOT_HEAD"),
 };
+
 
 UCLASS()
 class PROJECTSHOCK_API APS_HUD : public AHUD
@@ -39,7 +36,7 @@ public:
 		void UpdateAmmoBar();
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "ModifyCrosshairState"))
-		void ModifyCrosshairState(ECrosshairState CrosshairState);
+		void ModifyCrosshairState(ECrosshairAction CrosshairState);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Effects")
 		UPS_HUD_Crosshair* CrosshairWidget;

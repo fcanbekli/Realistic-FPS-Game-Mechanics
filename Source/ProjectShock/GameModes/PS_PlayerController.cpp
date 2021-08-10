@@ -21,6 +21,9 @@ APS_PlayerController::APS_PlayerController()
 void APS_PlayerController::SetIsAimingFalse()
 {
 	PlayerStateObject->bIsAiming = false;
+
+	// Modify Crosshair State!!!
+	Cast<APS_HUD>(GetHUD())->ModifyCrosshairState(ECrosshairAction::DISAPPEAR_DEFAULT_CROSSHAIR);
 }
 
 void APS_PlayerController::MoveForward(float Value)
@@ -64,9 +67,13 @@ void APS_PlayerController::MoveSide(float Value)
 void APS_PlayerController::RightTrigger()
 {
 	if (WasInputKeyJustPressed(EKeys::Gamepad_RightTrigger)) {
+		if (PlayerStateObject->bIsAiming == false) {
+			Cast<APS_HUD>(GetHUD())->ModifyCrosshairState(ECrosshairAction::SHOW_DEFAULT_CROSSHAIR);
+		}
 		PlayerStateObject->bIsAiming = true;
 
 		Cast<APS_Weapon>(PlayerCharacter->Weapon->GetChildActor())->FireWeapon();
+
 
 		GetWorldTimerManager().SetTimer(SideTransitionTimer, this, &APS_PlayerController::SetIsAimingFalse, 0.0f, false, 3.0f);
 	}else {
@@ -125,6 +132,9 @@ void APS_PlayerController::LeftShoulderButton()
 void APS_PlayerController::LeftTriggerButton()
 {
 	if (WasInputKeyJustPressed(EKeys::Gamepad_LeftTrigger)) {
+		if (PlayerStateObject->bIsAiming == false) {
+			Cast<APS_HUD>(GetHUD())->ModifyCrosshairState(ECrosshairAction::SHOW_DEFAULT_CROSSHAIR);
+		}
 		PlayerStateObject->bIsAiming = true;
 		PlayerCameraManagerObject->AimZoomIn();
 	}
