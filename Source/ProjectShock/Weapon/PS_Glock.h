@@ -10,19 +10,22 @@
 #include "Animation/AnimInstance.h"
 #include "Kismet/GameplayStatics.h"
 #include <ProjectShock/Weapon/PS_Weapon.h>
-
 #include "PS_Glock.generated.h"
 
 UCLASS()
 class PROJECTSHOCK_API APS_Glock : public APS_Weapon
 {
 	GENERATED_BODY()
+public:
 
-private:
 	UAnimMontage* GetRandomShootingAnimation();
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Hit)
+		FHitResult HitResults;
+
+
 	FHitResult GetHitResult();
 
-public:
 	UFUNCTION(BlueprintCallable)
 		void ShootEmpty();
 
@@ -31,8 +34,6 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 		void Shoot();
-
-
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))

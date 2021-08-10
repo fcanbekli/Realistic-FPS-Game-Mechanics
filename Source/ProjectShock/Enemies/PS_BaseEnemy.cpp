@@ -18,6 +18,12 @@ void APS_BaseEnemy::BeginPlay()
 	
 }
 
+void APS_BaseEnemy::HitFunciton()
+{
+	HitEnemy();
+	HitEnemy_BP();
+}
+
 // Called every frame
 void APS_BaseEnemy::Tick(float DeltaTime)
 {

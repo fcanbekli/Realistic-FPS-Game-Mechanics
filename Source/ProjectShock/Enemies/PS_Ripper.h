@@ -18,10 +18,11 @@ public:
 	APS_Ripper();
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
 		ERipperState RipperState;
-protected:
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
+	// Called when the game starts or when spawned
+	void HitEnemy() override;
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

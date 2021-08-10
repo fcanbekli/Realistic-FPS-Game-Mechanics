@@ -3,6 +3,8 @@
 
 #include <ProjectShock/Weapon/PS_Glock.h>
 
+#define SURFACE_Hittable_Enemy SurfaceType2
+
 
 
 UAnimMontage* APS_Glock::GetRandomShootingAnimation()
@@ -147,7 +149,7 @@ void APS_Glock::Shoot()
 			true);
 	}
 
-
+		
 	// Play Sound
 	UGameplayStatics::PlaySound2D(GetWorld(), GlockDataAsset->GlockShootSound, 3.0f, 1.0f, 0.0f);
 
@@ -157,11 +159,8 @@ void APS_Glock::Shoot()
 	// Update Ammo Bar
 	Cast<APS_HUD>(UGameplayStatics::GetPlayerController(GetWorld(), 0)->GetHUD())->UpdateAmmoBar();
 
-	// Hit
-	FHitResult OutHit = GetHitResult();
-// 	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("You are hitting: %s"), *OutHit.GetActor()->GetName()));
-// 	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("Impact Point: %s"), *OutHit.ImpactPoint.ToString()));
-// 	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("Normal Point: %s"), *OutHit.ImpactNormal.ToString()));
+//	Hit
+// 	HitResults = GetHitResult();
 }
 
 void APS_Glock::FireGlock()
