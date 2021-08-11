@@ -20,10 +20,10 @@ APS_PlayerController::APS_PlayerController()
 
 void APS_PlayerController::SetIsAimingFalse()
 {
-	PlayerStateObject->bIsAiming = false;
-
-	// Modify Crosshair State!!!
-	Cast<APS_HUD>(GetHUD())->ModifyCrosshairState(ECrosshairAction::DISAPPEAR_DEFAULT_CROSSHAIR);
+// 	PlayerStateObject->bIsAiming = false;
+// 
+// 	// Modify Crosshair State!!!
+// 	Cast<APS_HUD>(GetHUD())->ModifyCrosshairState(ECrosshairAction::DISAPPEAR_DEFAULT_CROSSHAIR);
 }
 
 void APS_PlayerController::MoveForward(float Value)
@@ -118,7 +118,7 @@ void APS_PlayerController::LeftFaceButton()
 }
 
 
-void APS_PlayerController::Le ftShoulderButton()
+void APS_PlayerController::LeftShoulderButton()
 {
 	if (PlayerStateObject->bIsGuarding == true) {
 		PlayerStateObject->bIsGuarding = false;
