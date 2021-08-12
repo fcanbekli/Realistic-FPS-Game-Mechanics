@@ -30,14 +30,14 @@
       <a href="#about-the-project">About The Project</a>
     </li>
     <li>
-      <a href="#getting-started">Features</a>
+      <a href="#features">Features</a>
       <ul>
-        <li><a href="#prerequisites">Blueprint and C++ Mixing</a></li>
-        <li><a href="#installation">Animations</a></li>
-        <li><a href="#installation">AI</a></li>
+        <li><a href="#blueprint-and-c-mixing">Blueprint and C++ Mixing</a></li>
+        <li><a href="#animations">Animations</a></li>
+        <li><a href="#ai">AI</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Gallery</a></li>
+    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -67,10 +67,24 @@ Blueprint is a built-in visual programming interface offered by the Unreal ecosy
 
 Animations are the most complex part of the project. I used more than 60 animations for FPS mechanics. I had to create very complex animation trees and blending mechanisms to properly link these animations together. It's a pretty iterative and intuitive process. I had to work very meticulously to overcome the problems here. I was especially careful about testing. Thus, I was able to overcome animation compatibility problems very quickly. The high number of animations is a source of complexity in itself. Correct naming and categorization is very important.
 
+![](Media/AnimationEntryPoint.jpg)
+
+One of the keys to creating complex animation systems is to break the problem down into smaller parts. This approach is used in many engineering products. In animation we can implement this with layering. Here is how I seperated hand animations in layer
+
+![](Media/HandLayer.jpg)
+
+Design animation transitions as specialized little graphs is very good practice. This makes the transition rules smaller and the graph much more easier to read.
+
+![](Media/SideAnimationGraph.jpg)
+
+It's also good practice to put more complex logic inside states. It helps us to limit the complexity within a particular node.
+
+![](Media/LeftRightRotationBlending.jpg)
 ### AI
 
 I would say AI is the most unpretentious part of the project. I implemented many basic concepts related to Behavioral Tree and Blackboard. I will add a much more complex and efficient AI in future updates
 
+![](Media/BehavioralTree.jpg)
 
 <!-- USAGE EXAMPLES -->
 ## Gallery
