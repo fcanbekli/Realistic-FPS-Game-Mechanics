@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include <ProjectShock/Player/PS_HUD_Crosshair.h>
+#include <ProjectShock/Player/PS_HUD_ItemBar.h>
 #include "GameFramework/HUD.h"
 #include "PS_HUD.generated.h"
 UENUM(BlueprintType)

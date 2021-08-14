@@ -75,7 +75,7 @@ void APS_PlayerController::RightTrigger()
 		Cast<APS_Weapon>(PlayerCharacter->Weapon->GetChildActor())->FireWeapon();
 
 
-		GetWorldTimerManager().SetTimer(SideTransitionTimer, this, &APS_PlayerController::SetIsAimingFalse, 0.0f, false, 3.0f);
+		//GetWorldTimerManager().SetTimer(SideTransitionTimer, this, &APS_PlayerController::SetIsAimingFalse, 0.0f, false, 3.0f);
 	}else {
 
 	}
@@ -113,6 +113,7 @@ void APS_PlayerController::LeftFaceButton()
 	else {
 		Cast<APS_PlayerState>(PlayerState)->bIsAiming = true;
 		Cast<APS_Weapon>(PlayerCharacter->Weapon->GetChildActor())->Reload();
+
 	}
 	//GetWorldTimerManager().SetTimer(SideTransitionTimer, this, &APS_PlayerController::SetIsAimingFalse, 0.0f, false, 3.0f);
 }
