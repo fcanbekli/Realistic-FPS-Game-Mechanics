@@ -30,7 +30,6 @@
         <li><a href="#ai">AI</a></li>
       </ul>
     </li>
-    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -40,7 +39,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Unreal Engine 5 has created a new revolution in the gaming world with the new technologies it offers like Nanite and Lumen. These technologies shortened the environment and asset creation processes and made it possible to make realtime GI with lumen. The goal of this project is to create a production ready FPS shooter gameplay mechanic using Unreal Engine 5. Also, two bugs in Unreal Engine 5 have been reported for community benefit.
+Unreal Engine 5 is a new revolution in the gaming world with the new technologies it offers like Nanite and Lumen. These technologies shortened the environment and asset creation processes and made it possible to make realtime GI with lumen. The goal of this project is to create a production ready FPS shooter gameplay mechanic using Unreal Engine 5. Also, two bugs in Unreal Engine 5 have been reported with this project for community benefit.
 
 
 
