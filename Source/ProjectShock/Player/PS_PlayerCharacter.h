@@ -73,6 +73,9 @@ public:
 	*/
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "ChangeWeapon"))
 		void ChangeWeapon();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, meta = (DisplayName = "PickWeapon"))
+		void PickWeapon();
 	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Camera, meta = (AllowPrivateAccess = "true"))
