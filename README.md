@@ -2,9 +2,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">Realistic FPS Shooter Mechanic</h3>
 
@@ -12,11 +9,7 @@
     First-person shooter game mechanic demo project with Unreal Engine 5
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://youtu.be/8OFazKbxW9o">View Demo</a>
   </p>
 </p>
 
@@ -48,7 +41,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 Unreal Engine 5 has created a new revolution in the gaming world with the new technologies it offers like Nanite and Lumen. These technologies shortened the environment and asset creation processes and made it possible to make realtime GI with lumen. The goal of this project is to create a production ready FPS shooter gameplay mechanic using Unreal Engine 5. Also, two bugs in Unreal Engine 5 have been reported for community benefit.
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 
 
@@ -85,12 +77,6 @@ It's also good practice to put more complex logic inside states. It helps us to 
 I would say AI is the most unpretentious part of the project. I implemented many basic concepts related to Behavioral Tree and Blackboard. I will add a much more complex and efficient AI in future updates
 
 ![](Media/BehavioralTree.jpg)
-
-<!-- USAGE EXAMPLES -->
-## Gallery
-
-
-
 
 <!-- LICENSE -->
 ## License
